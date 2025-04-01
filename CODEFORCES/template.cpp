@@ -30,6 +30,6 @@ int main(void) {
 }
 
 void solve() { // SOLUTION GOES HERE
-	
+
 }
 
