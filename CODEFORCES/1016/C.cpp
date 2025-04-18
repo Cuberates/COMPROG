@@ -31,5 +31,21 @@ int main(void) {
 }
  
 void solve() { // SOLUTION GOES HERE
+   ll x, k; 
+   std::cin >> x >> k;
 
+   if (k > 1) { 
+      if (k == 2 && x == 1) std::cout << "YES";
+      else std::cout << "NO";
+   } else { 
+      if (x == 1) std::cout << "NO";
+      else { 
+         int is_prime = true; 
+         for(int i = 2; i <= std::sqrt(x); i++) { 
+            is_prime *= (x % i != 0); 
+         }
+         std::cout << (is_prime ? "YES" : "NO");
+      }
+   }
+   std::cout << "\n";
 }  
