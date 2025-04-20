@@ -31,5 +31,15 @@ int main(void) {
 }
  
 void solve() { // SOLUTION GOES HERE
-
+   int n;
+   std::cin >> n; 
+   if(n % 2 == 0) { 
+      std::cout << "-1";
+   }
+   else { 
+      for(int i = 0; i < n; i++) { 
+         std::cout << n - i << " "; 
+      }
+   }
+   std::cout << "\n";
 }  

@@ -1,35 +1,50 @@
+#include <bits/stdc++.h>
 #include <iostream> 
-#include <vector> 
-#include <map>
-#include <cmath> 
-#include <stack>
-#include <queue>
-#include <string> 
-#include <cassert>
-#include <random> 
-#include <algorithm>
- 
+using namespace std;
+void IO() { ios_base::sync_with_stdio(false); cout.tie(0); std::cin.tie(0); }
+// constants
+#define maxN 1e5
+#define inf 1e9+7
+// data structures
+#define pii pair<int,int>
 #define ll long long
 #define vect vector
-#define MOD 1e9+7
- 
-void solve();
+// operations and loops
+#define FOR(i, a, b) for(int (i)=(a);i<=(b);i++);
+#define FORR(i, a, b) for(int (i)=(a);i<=(b);i++);
+#define all(x) (x).begin(), (x).end()
+#define size(x) (x).size(); 
+
+/**
+ * helpful mentality ^-^
+ * . check for parity -> 50% of test cases are solved
+ * . n >= k -> ((1e9 - k) / 1e9) * 100% of test cases are solved
+ * . unordered ops -> sort the damn thing
+ * . small n -> case work or brute force
+ * . clear everything pls
+ * . cp handbook for algs: 
+ *      binary search, 
+ *      sliding window, 
+ *      2-pointers, primality, 
+ *      dp, dfs, bfs, dijkstra,...
+ * . some problems can't be gabagooed and that's fine 
+ */
+
+void gabagoo() {
+
+}
  
 int main(void) { 	
-   std::ios_base::sync_with_stdio(false);
-   std::cout.tie(0); std::cin.tie(0);
+   IO();  
    int tests = 1;
-   std::cin >> tests; 
-   for(int i = 0; i < tests; i++) {
+   cin >> tests; 
+   FOR(i, 1, tests) { 
    #ifndef ONLINE_JUDGE
-      for(int j = 0; j < 10; j++)
-         std::cout << "-";
-      std::cout << "\n";
+      FOR(j, 0, 9)
+         cout << "-";
+      cout << "\n";
       #endif
-      solve(); 
+      gabagoo(); 
    }	
 }
  
-void solve() { // SOLUTION GOES HERE
-
-}  
