@@ -31,7 +31,7 @@ void IO() { ios_base::sync_with_stdio(false); cout.tie(0); std::cin.tie(0); }
  */
 
 void gabagoo() {
-
+   
 }
  
 int main(void) { 	
@@ -39,10 +39,10 @@ int main(void) {
    int tests = 1;
    cin >> tests; 
    FOR(i, 1, tests) { 
-   #ifndef ONLINE_JUDGE
-      FOR(j, 0, 9)
-         cout << "-";
-      cout << "\n";
+      #ifndef ONLINE_JUDGE
+         FOR(j, 0, 9)
+            cout << "-";
+         cout << "\n";
       #endif
       gabagoo(); 
    }	

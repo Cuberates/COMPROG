@@ -76,6 +76,13 @@
 		"numeric": "cpp",
 		"ranges": "cpp",
 		"type_traits": "cpp",
-		"algorithm": "cpp"
+		"algorithm": "cpp",
+		"forward_list": "cpp",
+		"list": "cpp",
+		"regex": "cpp",
+		"span": "cpp",
+		"unordered_set": "cpp",
+		"valarray": "cpp",
+		"filesystem": "cpp"
 	}
 }
