@@ -37,27 +37,23 @@ void IO() { ios_base::sync_with_stdio(false);
 #define size(x)         (x).size()
 
 void gabagoo() {
-   int n; string s; 
-   vect<int> ans(n, 0);
-   cin >> n >> s;    
+   int N; 
+   cin >> N; 
+   vect<int> A(N);
+   FOR(i, 0, N-1)
+      cin >> A[i]; 
 
-   int mx = 1;  
-   FOR(i, 0, n-1) { 
-      if (i == 0) ans[i] = mx; 
-      else if (s[i-1] == '<') {
-         ans[i] = 1; 
-         FORR(j, i-1, 0) {
-            ans[j]++; 
-            mx = max(ans[j], mx);  
-         }
-         // mx++;
-      } else { 
-         mx++; 
-         ans[i] = mx; 
+   vect<int> cnt(N+1, 0);
+
+   int ans = 0; 
+
+   FOR(i, 0, N-1) { 
+      if (cnt[A[i]] == 0) {
+         ans++; 
+         cnt[A[i]]++; 
       }
    }
-   FOR(i, 0, n-1) { cout << ans[i] << " "; }
-   cout << "\n";
+   cout << ans << "\n";
 }
 
 int main(void) { 	
@@ -68,3 +64,12 @@ int main(void) {
       gabagoo(); 
    }	
 }
+
+
+/**
+ * 1 3 5 2 4
+ *  
+ * 
+ * 1 * 3 * 5 * 2 * 4 = 
+ * 
+ */

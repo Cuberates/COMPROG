@@ -36,29 +36,64 @@ void IO() { ios_base::sync_with_stdio(false);
 #define len(x)          (x).length() 
 #define size(x)         (x).size()
 
-void gabagoo() {
-   int n; string s; 
-   vect<int> ans(n, 0);
-   cin >> n >> s;    
+int N; string S; 
 
-   int mx = 1;  
-   FOR(i, 0, n-1) { 
-      if (i == 0) ans[i] = mx; 
-      else if (s[i-1] == '<') {
-         ans[i] = 1; 
-         FORR(j, i-1, 0) {
-            ans[j]++; 
-            mx = max(ans[j], mx);  
+int cost(string S) { 
+   int res = 0; 
+   FOR(i, 0, N-1) {
+      if (i == 0) {
+         res++; 
+      } else if (S[i] != S[i-1]) {
+         res+=2; 
+      } else res++;
+   }
+   return res;
+}
+
+pii max_group (int l, int r, char k) {
+   int lb = -1, ub = -1; 
+   int cur_len = -1; 
+   FOR(i, l, r) {
+      if (S[i] == k) {
+         int len = 0; 
+         int j = i; 
+         for(;j <=r; j++) {
+            if(S[j] != k) break;
+            len++; 
          }
-         // mx++;
-      } else { 
-         mx++; 
-         ans[i] = mx; 
+         if (len > cur_len) {
+            lb = i; 
+            ub = j-1; 
+            cur_len = len;
+         }
       }
    }
-   FOR(i, 0, n-1) { cout << ans[i] << " "; }
-   cout << "\n";
-}
+   return make_pair(lb, ub);
+} 
+
+void gabagoo() {
+   // int N; string S; 
+   cin >> N >> S;
+   
+   
+   string S1 = S; 
+   pii g00 = max_group(0, N-1, '0');
+   pii g01 = max_group(0, g01.first - 1, '0');
+   pii g02 = max_group(g01.second + 1, N, '0');
+
+   if (g01.second - g01.first < g02.second - g02.first) {
+      
+   } else { 
+
+   }
+
+   int cost1 = cost(S); 
+
+   pii g10 = max_group(0, N-1, '0');
+   pii g11 = max_group(0, g11.first - 1, '0');
+   pii g12 = max_group(g11.second + 1, N, '0');
+ 
+}  
 
 int main(void) { 	
    IO(); // disable synchronization  
@@ -68,3 +103,15 @@ int main(void) {
       gabagoo(); 
    }	
 }
+
+/**
+ * 0. The idea is you want to minimize moving buttons
+ * 1. Ideally you want all the symbols to be grouped together
+ * 2. Do we just take the longest substring and merge it with the second longest? 
+ * 
+ * 10001010000
+ * 11010000000
+ *
+ * 1 10 1000010010  
+ * 
+ */
