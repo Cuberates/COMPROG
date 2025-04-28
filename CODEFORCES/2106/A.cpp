@@ -37,7 +37,20 @@ void IO() { ios_base::sync_with_stdio(false);
 #define size(x)         (x).size()
 
 void gabagoo() {
+   int N; string S; 
+   cin >> N >> S; 
 
+   // the number of total ones = cnt1 * N;
+   int ans = 0; 
+   FOR(i, 0, N-1) {
+      ans += (S[i] == '1');
+   }
+   ans = ans * N;
+   FOR(i, 0, N-1) {
+      if (S[i] == '1') ans--; 
+      else ans++; 
+   }
+   cout << ans << "\n";
 }
 
 int main(void) { 	

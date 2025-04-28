@@ -37,7 +37,23 @@ void IO() { ios_base::sync_with_stdio(false);
 #define size(x)         (x).size()
 
 void gabagoo() {
-
+   int N, X; 
+   cin >> N >> X; 
+   vect<int> A(N, -1);
+   int j = 0;  
+   FOR(i, 0, X-1) { 
+      A[i] = i;
+      j++;
+   }
+   // cout << "j: " << j << "\n"; 
+   // Go in reverse
+   FORR(i, N-1, X) { 
+      A[i] = j;
+      j++; 
+   } 
+   FOR(i, 0, N-1) 
+      cout << A[i] << " ";
+   cout << "\n";
 }
 
 int main(void) { 	
@@ -48,3 +64,18 @@ int main(void) {
       gabagoo(); 
    }	
 }
+
+/**
+ * [0, 1, 2, 3, 4]
+ * => [1, 2, 3, 4, 5]
+ * 
+ * [0, 0, 0, 0, 0]
+ * => [1, .... 1]
+ * 
+ * -> In order to color p[i] x then the prefix must be filled with values less than x
+ * 
+ * 
+ * 
+ * 
+ * 
+ */

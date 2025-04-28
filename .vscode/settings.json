@@ -83,6 +83,7 @@
 		"span": "cpp",
 		"unordered_set": "cpp",
 		"valarray": "cpp",
-		"filesystem": "cpp"
+		"filesystem": "cpp",
+		"random": "cpp"
 	}
 }
