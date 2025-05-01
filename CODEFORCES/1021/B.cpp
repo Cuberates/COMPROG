@@ -49,8 +49,3 @@ int main(void) {
       gabagoo(); 
    }	
 }
-
-/*
-
-1 2 3 4
-*/

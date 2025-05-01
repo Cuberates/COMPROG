@@ -36,63 +36,29 @@ void IO() { ios_base::sync_with_stdio(false);
 #define len(x)          (x).length() 
 #define size(x)         (x).size()
 
-int N; string S; 
-
-int cost(string S) { 
-   int res = 0; 
-   FOR(i, 0, N-1) {
-      if (i == 0) {
-         res++; 
-      } else if (S[i] != S[i-1]) {
-         res+=2; 
-      } else res++;
-   }
-   return res;
-}
-
-pii max_group (int l, int r, char k) {
-   int lb = -1, ub = -1; 
-   int cur_len = -1; 
-   FOR(i, l, r) {
-      if (S[i] == k) {
-         int len = 0; 
-         int j = i; 
-         for(;j <=r; j++) {
-            if(S[j] != k) break;
-            len++; 
-         }
-         if (len > cur_len) {
-            lb = i; 
-            ub = j-1; 
-            cur_len = len;
-         }
-      }
-   }
-   return make_pair(lb, ub);
-} 
-
 void gabagoo() {
-   // int N; string S; 
-   cin >> N >> S;
-   
-   
-   string S1 = S; 
-   pii g00 = max_group(0, N-1, '0');
-   pii g01 = max_group(0, g01.first - 1, '0');
-   pii g02 = max_group(g01.second + 1, N, '0');
+   int N; 
+   string S;
+   cin >> N >> S; 
 
-   if (g01.second - g01.first < g02.second - g02.first) {
-      
-   } else { 
+   int sw = 0;  
+   int state = 0;
 
+   FOR(i, 0, N-1) { 
+      int c = S[i] - '0';
+      if (c != state) { 
+         sw++; 
+         state = c; 
+      } else continue;
    }
+   int ans = sw + N;
+   
+   if (sw <= 1) { ans += 0; }
+   else if (sw <= 2) { ans --; } 
+   else ans -= 2;
 
-   int cost1 = cost(S); 
+   cout << ans << "\n";
 
-   pii g10 = max_group(0, N-1, '0');
-   pii g11 = max_group(0, g11.first - 1, '0');
-   pii g12 = max_group(g11.second + 1, N, '0');
- 
 }  
 
 int main(void) { 	
@@ -104,14 +70,22 @@ int main(void) {
    }	
 }
 
-/**
- * 0. The idea is you want to minimize moving buttons
- * 1. Ideally you want all the symbols to be grouped together
- * 2. Do we just take the longest substring and merge it with the second longest? 
- * 
- * 10001010000
- * 11010000000
- *
- * 1 10 1000010010  
- * 
- */
+/*
+
+S = "0...01...1" => Perform at most 1 switch
+S = "1...10...0" => Make a switch at the beginning => Must perform at least 1 switch
+
+// Lowerbound of teh answer is N + (some no. switches)
+// Minimize no. switches
+
+Suppose we have S, which requires K switches.
+If reverse some substring of S, how will K change? 
+
+S = "00011001" => Require K = 3 swithes
+S(1) = "10011000" => K + 1
+
+After changing S, K will increase or decrease by at most 1?
+
+1111101111
+
+*/
