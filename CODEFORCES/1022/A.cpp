@@ -16,6 +16,7 @@
 #include <bits/stdc++.h>
 #include <iostream> 
 #include <map> 
+#include <set>
 using namespace std;
 void IO() { ios_base::sync_with_stdio(false); 
             cout.tie(0); cin.tie(0); }
@@ -36,30 +37,21 @@ void IO() { ios_base::sync_with_stdio(false);
 #define len(x)          (x).length() 
 #define size(x)         (x).size()
 
-void gabagoo() {
-   int N; 
-   string S;
-   cin >> N >> S; 
-   
-   int sw = 0;  
-   int state = 0;
-
-   FOR(i, 0, N-1) { 
-      int c = S[i] - '0';
-      if (c != state) { 
-         sw++; 
-         state = c; 
-      } else continue;
+void gabagoo() { 
+   int n; 
+   cin >> n; 
+   vect<int> p(n);
+   int ms = 0; 
+   FOR(i, 0, n-1) {
+      p[i] = (n-i-1);
+      ms += abs(p[i] - i);
    }
-   int ans = sw + N;
-   
-   if (sw <= 1) { ans += 0; }
-   else if (sw <= 2) { ans --; } 
-   else ans -= 2;
-
+   int ans = 0; 
+   FOR(k, 0, ms) { 
+      if (2 * k <= ms) ans++; 
+   }
    cout << ans << "\n";
-
-}  
+}
 
 int main(void) { 	
    IO(); // disable synchronization  
@@ -69,23 +61,3 @@ int main(void) {
       gabagoo(); 
    }	
 }
-
-/*
-
-S = "0...01...1" => Perform at most 1 switch
-S = "1...10...0" => Make a switch at the beginning => Must perform at least 1 switch
-
-// Lowerbound of teh answer is N + (some no. switches)
-// Minimize no. switches
-
-Suppose we have S, which requires K switches.
-If reverse some substring of S, how will K change? 
-
-S = "00011001" => Require K = 3 swithes
-S(1) = "10011000" => K + 1
-
-After changing S, K will increase or decrease by at most 1?
-
-1111101111
-
-*/

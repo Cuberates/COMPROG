@@ -37,55 +37,24 @@ void IO() { ios_base::sync_with_stdio(false);
 #define size(x)         (x).size()
 
 void gabagoo() {
-   int N; 
-   string S;
-   cin >> N >> S; 
+   ll n, m, a; 
+   cin >> n >> m >> a; 
    
-   int sw = 0;  
-   int state = 0;
-
-   FOR(i, 0, N-1) { 
-      int c = S[i] - '0';
-      if (c != state) { 
-         sw++; 
-         state = c; 
-      } else continue;
-   }
-   int ans = sw + N;
-   
-   if (sw <= 1) { ans += 0; }
-   else if (sw <= 2) { ans --; } 
-   else ans -= 2;
-
-   cout << ans << "\n";
-
-}  
+   if (n % a == 0 && m % a == 0) 
+      cout << n / a * m / a << "\n";
+   else if (n % a == 0 && m % a != 0)
+      cout << n / a * (m / a + 1) << "\n";
+   else if (n % a != 0 && m % a == 0) 
+      cout << (n / a + 1) * (m / a) << "\n";
+   else 
+      cout << (n / a + 1) * (m / a + 1) << "\n";
+}
 
 int main(void) { 	
    IO(); // disable synchronization  
    int tests = 1;
-   cin >> tests; 
+   // cin >> tests; 
    FOR(i, 1, tests) { 
       gabagoo(); 
    }	
 }
-
-/*
-
-S = "0...01...1" => Perform at most 1 switch
-S = "1...10...0" => Make a switch at the beginning => Must perform at least 1 switch
-
-// Lowerbound of teh answer is N + (some no. switches)
-// Minimize no. switches
-
-Suppose we have S, which requires K switches.
-If reverse some substring of S, how will K change? 
-
-S = "00011001" => Require K = 3 swithes
-S(1) = "10011000" => K + 1
-
-After changing S, K will increase or decrease by at most 1?
-
-1111101111
-
-*/
