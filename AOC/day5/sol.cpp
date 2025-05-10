@@ -40,8 +40,5 @@ int main(void) {
 		auto pairs = process1(tokens);
 		ordering.push_back(pairs);
 	}
-
-
-
 	return 0; 
 }
