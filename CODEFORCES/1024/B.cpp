@@ -80,12 +80,12 @@ void IO() { ios_base::sync_with_stdio(false); cout.tie(0); cin.tie(0); }
 const int maxN            = 3e5+1;
 const int inf             = 1e9+10;
 // data structure
-// typedef pair<int, int>        pii;
-// typedef map<int, int>         mii;
-// typedef map<char, int>        mci;
-// typedef priority_queue<int>   pq;
+typedef pair<int, int>        pii;
+typedef map<int, int>         mii;
+typedef map<char, int>        mci;
+typedef priority_queue<int>   pqi;
 typedef long long             ll;
-// typedef vector<int>           vi;
+typedef vector<int>           vi;
 #define vt vector
 
 // operations and loops
@@ -112,11 +112,25 @@ typedef long long             ll;
 **/
 
 void gabagoo() {
-   
+   int n;
+   cin >> n;
+   vt<int> a(n+1);
+   FOR(i, 1, n)
+      cin >> a[i];
+   vt<int> ab(n+1); 
+   FOR(i, 1, n) { 
+      ab[i] = abs(a[i]);
+   }
+   sort(all(ab)); 
+   // int x = n / 2 + (n % 2 != 0); 
+   int x = n / 2 + 1; 
+   if (abs(a[1]) <= ab[x]) 
+      cout << "YES \n";
+   else cout << "NO \n";
 }  
 
 int main(void) { 	
-   IO(); // disable synchronization  
+   IO(); // disable synchronization 
    int tests = 1;
    cin >> tests; 
    FOR(i, 1, tests) { 

@@ -80,12 +80,12 @@ void IO() { ios_base::sync_with_stdio(false); cout.tie(0); cin.tie(0); }
 const int maxN            = 3e5+1;
 const int inf             = 1e9+10;
 // data structure
-// typedef pair<int, int>        pii;
-// typedef map<int, int>         mii;
-// typedef map<char, int>        mci;
-// typedef priority_queue<int>   pq;
+typedef pair<int, int>        pii;
+typedef map<int, int>         mii;
+typedef map<char, int>        mci;
+typedef priority_queue<int>   pqi;
 typedef long long             ll;
-// typedef vector<int>           vi;
+typedef vector<int>           vi;
 #define vt vector
 
 // operations and loops
@@ -112,14 +112,32 @@ typedef long long             ll;
 **/
 
 void gabagoo() {
-   
+   int n, m, p, q; 
+   cin >> n >> m >> p >> q; 
+
+   // mp = nq; 
+   if (n % p == 0) {
+      // setting each block equal => 
+      if (n * q == m * p) cout << "YES \n";
+      else cout << "NO \n";
+   } else { 
+      // is it always possible? 
+      cout << "YES \n";
+   }
 }  
 
 int main(void) { 	
-   IO(); // disable synchronization  
+   IO(); // disable synchronization 
    int tests = 1;
    cin >> tests; 
    FOR(i, 1, tests) { 
       gabagoo();
    }
 }
+
+// a[0] + a[1] + ... + a[n-1] = m;
+// a[i] + a[i+1] + ... + a[i+p-1] = q;
+
+// a[0] + ... + a[i-1] + q + a[i+p] + ... a[n-1] = m
+// => a[0] + ... a[i-1] + a[i+p] + ... a[n-1] = m - q;
+

@@ -28,7 +28,6 @@ int main(void) {
 		solve(); 
 	}	
 }
-
 void solve() { 
 	int n;
 	std::string a, b; 

@@ -40,10 +40,8 @@ void gabagoo() {
    int N; 
    string S;
    cin >> N >> S; 
-   
    int sw = 0;  
    int state = 0;
-
    FOR(i, 0, N-1) { 
       int c = S[i] - '0';
       if (c != state) { 
@@ -52,13 +50,10 @@ void gabagoo() {
       } else continue;
    }
    int ans = sw + N;
-   
    if (sw <= 1) { ans += 0; }
    else if (sw <= 2) { ans --; } 
    else ans -= 2;
-
    cout << ans << "\n";
-
 }  
 
 int main(void) { 	
