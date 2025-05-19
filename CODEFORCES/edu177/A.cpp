@@ -41,10 +41,16 @@ typedef map<char, int>        mci;
 **/
 
 void gabagoo() {
-
+   // 2*k + 2*k = 3*n???
+   // 1.25 * (3 * n) / 2??
+   ll n; 
+   cin >> n; 
+   // 4 : 3
+   // k : 3n
+   cout << n * 4 / 2 << "\n";
 }  
 
-int main(void) { 	
+int main(void) { 
    IO(); // disable synchronization  
    int tests = 1;
    cin >> tests; 
