@@ -19,19 +19,36 @@
 #include "../template.h"
 #endif
 using namespace std;
-void IO() { ios_base::sync_with_stdio(false); cout.tie(0); cin.tie(0);}
-#define pb              push_back
-#define all(x)          (x).begin(), (x).end()
-#define ll              long long
-#define vt              vector
-/*--------------------------------------------------------------------------*/
+
+#define ll long long
+#define pii pair<int,int>
 
 void gabagoo() {
-
+   int n, k;
+   cin >> n >> k; 
+   vector<int> l(n), r(n); 
+   // ll total = 0; 
+   for(int i = 0; i < n; i++) cin >> l[i];
+   for(int i = 0; i < n; i++) cin >> r[i]; 
+   // Pick all n colors of opposite pairs
+   ll ans = 0; 
+   vector<int> pf(n);
+   vector<int> ps(n); 
+   for(int i = 0; i < n; i++) { 
+      pf[i] = max(l[i], r[i]);
+      ps[i] = min(l[i], r[i]); 
+      ans += pf[i];
+   }
+   sort(ps.begin(), ps.end(), greater<int>() );
+   for(int i = 0; i < k-1; i++) {
+      ans += ps[i];
+   }
+   ans++; 
+   cout << ans << "\n";
 }  
-
 int main(void) { 	
-   IO(); // disable synchronization  
+   ios_base::sync_with_stdio(false); 
+   cout.tie(0); cin.tie(0);
    int tests = 1;
    cin >> tests; 
    for(int i = 1; i <= tests; i++) 
