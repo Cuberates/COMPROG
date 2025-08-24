@@ -9,7 +9,7 @@ using namespace std;
 #define ll long long
 
 void gabagoo() {
-   
+
 }  
 
 int main(void) { 	

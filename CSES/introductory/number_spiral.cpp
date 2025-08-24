@@ -11,7 +11,7 @@ int main(void) {
 	for(tt; tt > 0; tt--) { 
 		ll y, x; 
 		cin >> y >> x; 
-		swap(x, y);
+		// swap(x, y);
 		ll ans; 
 		if(x >= y && x % 2 == 0) ans = (x*x)-y+1; 
 		else if(x >= y && x % 2 != 0) ans = ((x-1)*(x-1))+y-1; 

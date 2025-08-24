@@ -9,7 +9,7 @@ using namespace std;
 #define ll long long
 
 void gabagoo() {
-
+   
 }  
 
 int main(void) { 	
@@ -19,5 +19,4 @@ int main(void) {
    cin >> tests; 
    for(int i = 1; i <= tests; i++) 
       gabagoo(); 
-   
 }

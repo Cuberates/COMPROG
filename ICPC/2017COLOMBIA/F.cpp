@@ -21,7 +21,7 @@ void gabagoo() {
     ok *= check(a, b, c);
   }
   cout << (ok ? "YES" : "NO") << "\n";
-}  
+}
 
 int main(void) { 	
   ios_base::sync_with_stdio(false);
