@@ -25,7 +25,7 @@ ll query(int left, int right) {
    ll pref = ps[left]; 
    ll suff = ps[n-right];  
    return suff - pref; 
-}  
+}
 
 void gabagoo() {
    cin >> n >> k; 

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// int maxSatisfied(vector<int>& customers, vector<int>& grumpy, int minutes) {
+int maxSatisfied(vector<int>& customers, vector<int>& grumpy, int minutes) {
 //   int ans = 0;  
 //   for(int i = 0; i < grumpy.size() - minutes + 1; i++) { 
 //     int total = 0; 
@@ -27,6 +27,8 @@ using namespace std;
 //   }
 //   return ans; 
 // }
+
+
 
 int maxSatisfied(vector<int>& customers, vector<int>& grumpy, int minutes) {
   int ans = 0;  

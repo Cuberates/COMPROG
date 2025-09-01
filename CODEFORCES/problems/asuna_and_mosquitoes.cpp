@@ -50,6 +50,7 @@ typedef vector<int>           vi;
 #define len(x)          (x).length() 
 #define size(x)         (x).size()
 
+
 void gabagoo() {
    int N; 
    cin >> N; 
