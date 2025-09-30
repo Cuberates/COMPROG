@@ -62,7 +62,7 @@ int main(void) {
    cin >> tests; 
    FOR(i, 1, tests) { 
       gabagoo(); 
-   }	
+   }
 }
 
 /*

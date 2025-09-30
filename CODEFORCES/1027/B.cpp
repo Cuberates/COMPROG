@@ -37,7 +37,6 @@ void gabagoo() {
       mn = 0; 
       if (mx >= 2) cout << "NO \n";
       else cout << "YES \n";
-      
    }
 } 
 int main(void) { 	

@@ -3,7 +3,7 @@
 
 
 // #include <bits/stdc++.h>
-// #define cerr cout
+#define cerr cout
 namespace __DEBUG_UTIL__
 {
    using namespace std;
