@@ -18,7 +18,7 @@ void gabagoo() {
     if (i <= 0) { 
       pref_min[i] = a[i];
       suff_max[i] = a[n-i-1];
-      continue; 
+      continue;
     }
     pref_min[i] = min(a[i], pref_min[i-1]);
     suff_max[i] = max(a[n-i], suff_max[i-1]); 
