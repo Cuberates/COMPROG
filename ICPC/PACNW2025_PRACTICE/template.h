@@ -1,9 +1,3 @@
-// #ifdef ONLINE_JUDGE
-// #include <bits/stdc++.h>
-// #else
-// #include "../../CODEFORCES/template.h"
-// #endif
-
 // Template from Chenjb
 #include <cassert>
 #include <cctype>
@@ -80,20 +74,3 @@
 #include <unordered_map>
 #include <unordered_set>
 
-using namespace std;
-
-#define ll long long
-
-int main(void) { 	
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);   
-
-  double s1, s2, s3, s4;
-  cin >> s1 >> s2 >> s3 >> s4;  
-  vector<double> s = {s1, s2, s3, s4};
-  double ans = 0.0;
-  do { 
-  
-  } while (next_permutation(s.begin(), s.end()));
-  cout << ans << "\n";
-}

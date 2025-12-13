@@ -1,3 +1,9 @@
+// #ifdef ONLINE_JUDGE
+// #include <bits/stdc++.h>
+// #else
+// #include "../../CODEFORCES/template.h"
+// #endif
+
 // Template from Chenjb
 #include <cassert>
 #include <cctype>

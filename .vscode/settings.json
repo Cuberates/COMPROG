@@ -89,6 +89,11 @@
       "numeric": "cpp",
       "random": "cpp",
       "type_traits": "cpp",
-      "algorithm": "cpp"
+      "algorithm": "cpp",
+      "coroutine": "cpp",
+      "bit": "cpp",
+      "chrono": "cpp",
+      "format": "cpp",
+      "ranges": "cpp"
    }
 }

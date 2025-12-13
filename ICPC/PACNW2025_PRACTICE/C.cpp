@@ -1,10 +1,3 @@
-// #ifdef ONLINE_JUDGE
-// #include <bits/stdc++.h>
-// #else
-// #include "../../CODEFORCES/template.h"
-// #endif
-
-// Template from Chenjb
 #include <cassert>
 #include <cctype>
 #include <cerrno>
@@ -82,18 +75,24 @@
 
 using namespace std;
 
-#define ll long long
+int main(void) {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0); cout.tie(0);
 
-int main(void) { 	
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);   
-
-  double s1, s2, s3, s4;
-  cin >> s1 >> s2 >> s3 >> s4;  
-  vector<double> s = {s1, s2, s3, s4};
-  double ans = 0.0;
-  do { 
+  // int N; cin >> N;
+  int num_green_herb = 0, num_red_herb = 0;
+  cin >> num_green_herb >> num_red_herb;
   
-  } while (next_permutation(s.begin(), s.end()));
-  cout << ans << "\n";
+  vector<vector<int> > dp(num_green_herb + 1, vector<int>(num_red_herb + 1, 0));
+  dp[0][0] = 0;
+
+  for(int i = 0; i <= num_green_herb; i++) { 
+    for(int j = 0; j <= num_red_herb; j++) { 
+      if (i>=1) dp[i][j] = max(dp[i][j], dp[i-1][j] + 1);
+      if (i>=2) dp[i][j] = max(dp[i][j], dp[i-2][j] + 3);
+      if (i>=3) dp[i][j] = max(dp[i][j], dp[i-3][j] + 10);
+      if (i>=1 && j>=1) dp[i][j] = max(dp[i][j], dp[i-1][j-1] + 10);
+    }
+  }
+  cout << dp[num_green_herb][num_red_herb] << "\n"; 
 }

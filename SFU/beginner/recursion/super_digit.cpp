@@ -108,6 +108,7 @@ string super(string n) {
   }
   return super(t);
 }
+
 void sol() {
   string n;
   cin >> n >> p;

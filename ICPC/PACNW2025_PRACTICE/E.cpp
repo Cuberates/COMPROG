@@ -1,10 +1,3 @@
-// #ifdef ONLINE_JUDGE
-// #include <bits/stdc++.h>
-// #else
-// #include "../../CODEFORCES/template.h"
-// #endif
-
-// Template from Chenjb
 #include <cassert>
 #include <cctype>
 #include <cerrno>
@@ -82,18 +75,26 @@
 
 using namespace std;
 
-#define ll long long
+int main(void) {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0); cout.tie(0);
 
-int main(void) { 	
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);   
-
-  double s1, s2, s3, s4;
-  cin >> s1 >> s2 >> s3 >> s4;  
-  vector<double> s = {s1, s2, s3, s4};
-  double ans = 0.0;
-  do { 
-  
-  } while (next_permutation(s.begin(), s.end()));
-  cout << ans << "\n";
+  int num_test; 
+  cin >> num_test;
+  vector<int> ans(num_test); 
+  for(int tt = 0; tt < num_test; tt++) { 
+    string element, abriv;
+    cin >> element >> abriv;
+    set<int> letters_in_element;
+    for(int i = 0; i < element.length(); i++) { 
+      letters_in_element.insert(element[i]);
+    }
+    bool good = true;
+    for(int i = 0; i < abriv.length(); i++) { 
+      if (!letters_in_element.count(abriv[i])) good = false;
+    }
+    ans[tt] = good;
+  }
+  for(int i = 0; i < num_test; i++) 
+    cout << (ans[i] ? "YES" : "NO") << "\n";  
 }

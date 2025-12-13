@@ -9,8 +9,10 @@ using namespace std;
 #define ll long long
 
 void gabagoo() {
-} 
-
+   int n; cin >> n; 
+   vector<int> a(n);
+   
+}
 
 int main(void) { 	
    ios_base::sync_with_stdio(false);

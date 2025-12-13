@@ -1,9 +1,3 @@
-// #ifdef ONLINE_JUDGE
-// #include <bits/stdc++.h>
-// #else
-// #include "../../CODEFORCES/template.h"
-// #endif
-
 // Template from Chenjb
 #include <cassert>
 #include <cctype>
@@ -82,18 +76,27 @@
 
 using namespace std;
 
-#define ll long long
+vector<string> a; 
+int r, c, sx, sy, ex, ey; 
 
-int main(void) { 	
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);   
-
-  double s1, s2, s3, s4;
-  cin >> s1 >> s2 >> s3 >> s4;  
-  vector<double> s = {s1, s2, s3, s4};
-  double ans = 0.0;
-  do { 
+int dfs(int u, int v, char dir = 'r') {
+  if (u == ex && v == ey) return 1;
   
-  } while (next_permutation(s.begin(), s.end()));
-  cout << ans << "\n";
+  if (dir == 'r') { 
+    if (u-1 >= 0 && a[u-1][v] != '1')     
+  }
+
+  if (dir == 'l') {
+
+  }
+  return 0;
+}
+
+int main(void) { 
+  cin >> r >> c >> sx >> sy >> ex >> ey;
+  a = vector<string>(r);
+  for(int i = 0; i < r; i++) { 
+    cin >> a[i];
+  }
+  cout << (dfs() ? 1 : 0);
 }

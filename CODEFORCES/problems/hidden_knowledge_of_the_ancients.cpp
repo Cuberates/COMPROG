@@ -1,7 +1,7 @@
 #ifdef ONLINE_JUDGE
 #include <bits/stdc++.h>
 #else
-#include "../CODEFORCES/template.h"
+#include "../template.h"
 #endif
 
 using namespace std;
@@ -9,7 +9,6 @@ using namespace std;
 #define ll long long
 
 void gabagoo() {
-
    
 } 
 
@@ -21,3 +20,4 @@ int main(void) {
    for(int i = 1; i <= tests; i++) 
       gabagoo(); 
 }
+

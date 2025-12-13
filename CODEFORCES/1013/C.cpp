@@ -14,7 +14,7 @@
 #define MOD 1e9+7
  
 void solve();
- 
+
 int main(void) { 	
    std::ios_base::sync_with_stdio(false);
    std::cout.tie(0); std::cin.tie(0);

@@ -1,10 +1,3 @@
-// #ifdef ONLINE_JUDGE
-// #include <bits/stdc++.h>
-// #else
-// #include "../../CODEFORCES/template.h"
-// #endif
-
-// Template from Chenjb
 #include <cassert>
 #include <cctype>
 #include <cerrno>
@@ -82,18 +75,19 @@
 
 using namespace std;
 
-#define ll long long
+int main(void) { 
+  ios_base::sync_with_stdio(0);
+  cin.tie(0); cout.tie(0);
 
-int main(void) { 	
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);   
+  long long N;
+  cin >> N;
+  vector<int> price(N);
+  for(int i = 0; i < N; i++)
+    cin >> price[i];
 
-  double s1, s2, s3, s4;
-  cin >> s1 >> s2 >> s3 >> s4;  
-  vector<double> s = {s1, s2, s3, s4};
-  double ans = 0.0;
-  do { 
-  
-  } while (next_permutation(s.begin(), s.end()));
-  cout << ans << "\n";
+  sort(price.begin(), price.end());
+  int max_reimburse = price[N-1] / 2;
+  int min_flight_price = price[0];
+
+  cout << max(0, min_flight_price - max_reimburse) << "\n";
 }

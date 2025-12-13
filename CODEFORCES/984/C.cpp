@@ -36,10 +36,6 @@ void gabagoo() {
     for(int j=u;j>=u-3;j--) { 
       if (j >= 0 && g[j]) { g[j] = 0; cnt--; }
     }
-    // for(int j=u;j<=u+3;j++) { 
-    //   if (j < n && g[j]) { g[j] = 0; cnt--; }
-    // }
-
     for(int j=u; j>=u-3; j--) { 
       int ok = (j >= 0 && j+3<n) && (s[j] == '1' && s[j+1] == '1' && s[j+2] == '0' && s[j+3] == '0');
       if (ok) { 

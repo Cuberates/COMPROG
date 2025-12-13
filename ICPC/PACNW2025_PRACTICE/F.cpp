@@ -1,10 +1,3 @@
-// #ifdef ONLINE_JUDGE
-// #include <bits/stdc++.h>
-// #else
-// #include "../../CODEFORCES/template.h"
-// #endif
-
-// Template from Chenjb
 #include <cassert>
 #include <cctype>
 #include <cerrno>
@@ -82,18 +75,34 @@
 
 using namespace std;
 
-#define ll long long
+bool compare(const string &u, const string &v) {
+  return u.length() < v.length();
+}
 
-int main(void) { 	
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);   
+int cost(const string &team_name) { 
+  return team_name.length();
+}
 
-  double s1, s2, s3, s4;
-  cin >> s1 >> s2 >> s3 >> s4;  
-  vector<double> s = {s1, s2, s3, s4};
-  double ans = 0.0;
-  do { 
+bool is_eligible (const string &team_name) { 
+  set<char> used_letters;
+  for(char c : team_name) {
+    if(used_letters.count(c))
+      return false;
+  }
+  return true;
+}
+
+int main(void) {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0); cout.tie(0);
   
-  } while (next_permutation(s.begin(), s.end()));
-  cout << ans << "\n";
+  int num_problems, num_teams; 
+  cin >> num_problems >> num_teams;   
+
+  vector<string> teams(num_teams);
+  for(int i = 0; i < num_teams; i++)
+    cin >> teams[i];
+
+  sort(teams.begin(), teams.end(), compare);
+ 
 }
